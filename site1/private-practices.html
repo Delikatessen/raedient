@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Practices Cleaning Services - Rae'dient</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to private practices page */
+        .header-logo {
+            max-height: 80px;
+            width: auto;
+            border: none;
+            outline: none;
+        }
+
+        /* REMOVED old contact styles */
+        /* .contact-info-top { ... } */
+        /* .contact-item-top { ... } */
+
+        /* Header Redesign */
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Distribute items */
+            align-items: center;
+            padding: 10px 0; /* Adjust padding as needed */
+            flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        }
+
+        .logo {
+            flex-shrink: 0; /* Prevent logo from shrinking */
+            margin-right: 20px; /* Add some space between logo and nav */
+        }
+
+        nav {
+            flex-grow: 1; /* Allow nav to take available space */
+            display: flex;
+            justify-content: center; /* Center nav links relative to its container */
+            align-items: center;
+            min-width: 0; /* Prevent flexbox overflow issues */
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Spacing between nav items */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap; /* Allow nav items to wrap if needed */
+        }
+
+        .header-contact {
+            display: flex;
+            flex-direction: column; /* Stack phone/email vertically */
+            align-items: flex-end; /* Align to the right */
+            gap: 5px;
+            text-align: right;
+            flex-shrink: 0; /* Prevent contact info from shrinking */
+            margin-left: 20px; /* Add space between nav and contact */
+        }
+
+        .header-contact .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em; /* Slightly smaller font */
+        }
+
+        .header-contact .contact-item i {
+            color: #0099cc; /* Accent color for icons */
+            font-size: 1.1em; /* Slightly larger icons */
+        }
+
+        /* Responsive Adjustments for Header */
+        @media (max-width: 1024px) { /* Adjust breakpoint for tablet/laptop */
+             nav {
+                 justify-content: flex-end; /* Align nav towards right */
+             }
+             .header-contact {
+                 order: 3; /* Place contact info last on medium screens */
+                 width: 100%;
+                 margin-top: 10px;
+                 align-items: center;
+                 text-align: center;
+                 flex-direction: row;
+                 justify-content: center;
+                 gap: 20px;
+                 margin-left: 0; /* Reset margin */
+             }
+             nav ul {
+                justify-content: center; /* Center items when wrapped */
+             }
+        }
+
+        @media (max-width: 768px) {
+            /* Existing mobile styles for .header-logo */
+            .header-logo {
+                max-height: 60px;
+            }
+
+            /* Mobile Header: Logo top-left, Toggle top-right, Contact Center, Nav below */
+            .header-container {
+                position: relative; /* Context for absolute positioning of menu */
+                justify-content: space-between;
+             }
+
+            .logo {
+                order: 1;
+                margin-right: 0; /* Reset margin */
+            }
+
+            .mobile-menu-toggle {
+                 order: 2;
+                 display: block; /* Ensure toggle is visible */
+             }
+
+             .header-contact {
+                 order: 3;
+                 width: 100%;
+                 margin-top: 10px;
+                 align-items: center;
+                 flex-direction: column; /* Stack vertically again */
+                 gap: 5px;
+                 justify-content: center;
+                 text-align: center;
+                 margin-left: 0;
+             }
+             .header-contact .contact-item {
+                 font-size: 0.9em;
+             }
+
+            nav {
+                order: 4;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav ul {
+                display: none; /* Hide default nav list */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Position below header */
+                left: 0;
+                width: 100%;
+                background-color: #fff; /* Add background for visibility */
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                padding: 10px 0;
+                z-index: 1000;
+            }
+
+            nav ul.show {
+                display: flex; /* Show when toggled */
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li a {
+                 display: block;
+                 padding: 10px;
+             }
+            .dropdown .dropdown-content {
+                position: static; /* Adjust dropdown for mobile */
+                display: none; /* Hide sub-menu by default */
+                box-shadow: none;
+                background-color: #f9f9f9; /* Slightly different background */
+             }
+             .dropdown:hover .dropdown-content {
+                 display: block; /* Show on hover/focus */
+             }
+             .dropdown-content a {
+                padding-left: 30px; /* Indent sub-menu items */
+             }
+
+             /* Keep existing mobile styles for other sections */
+            .info-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .info-image {
+                order: 1;
+            }
+            
+            .info-content {
+                order: 2;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .service-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('siteImages/Private_Practices_Cleaning.png'), url('https://placehold.co/1600x900/0099cc/ffffff?text=Private+Practices+Cleaning');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .service-hero .hero-content {
+            width: 100%;
+        }
+        
+        .service-hero h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-hero p {
+            color: var(--white);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: var(--white);
+            border: var(--border);
+            padding: 1.5rem;
+        }
+        
+        .benefit-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .info-block {
+            padding: 2rem 0;
+        }
+        
+        .info-block:nth-child(even) {
+            background-color: var(--gray-color);
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .info-grid:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .info-image img {
+            border: var(--border);
+            width: 100%;
+        }
+        
+        .info-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .info-list {
+            margin-top: 1rem;
+        }
+        
+        .info-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-list i {
+            color: var(--accent-color);
+            margin-right: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        
+        .cta-section {
+            background-color: var(--light-color);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        @media (max-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="siteImages/logo_transparent2.png" alt="Rae'dient Pro Clean" class="header-logo">
+            </div>
+            <!-- Removed old contact info location -->
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#services">Services</a>
+                        <div class="dropdown-content">
+                            <a href="private-practices.html">Private Practices</a>
+                            <a href="childcare.html">Childcare</a>
+                            <a href="retail.html">Retail</a>
+                            <a href="offices.html">Offices</a>
+                            <a href="special-events.html">Special Events</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact"> <!-- New location for contact info -->
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(469) 353-9409</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>raediantclean@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Private Practices Cleaning Services</h1>
+                <p>Medical-grade sanitation for healthcare environments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="section-header">
+                <h2>Healthcare Cleaning Excellence</h2>
+                <p>Where cleanliness is critical to patient care and professional reputation</p>
+            </div>
+            <div class="intro-text">
+                <p>At Rae'dient, we understand that healthcare facilities require a higher standard of cleanliness than typical commercial spaces. Medical practices must maintain strict sanitation protocols to prevent infection, comply with regulations, and create a safe, comfortable environment for patients and staff.</p>
+                <p>Our cleaning team is trained in healthcare-specific protocols, using hospital-grade disinfectants and methodologies designed to meet and exceed medical environment standards. From exam rooms to waiting areas, we ensure every surface meets rigorous sanitation requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="section-header">
+                <h2>Benefits of Specialized Medical Cleaning</h2>
+                <p>Why healthcare facilities demand a different approach to sanitation</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-virus-slash"></i>
+                    <h3>Infection Control</h3>
+                    <p>Our hospital-grade disinfection protocols effectively eliminate pathogens that can lead to healthcare-associated infections, protecting vulnerable patients and staff.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Regulatory Compliance</h3>
+                    <p>Our services help your practice meet OSHA, CDC, and other regulatory requirements for healthcare facility cleanliness and infection control.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Patient Confidence</h3>
+                    <p>A visibly clean, fresh-smelling environment builds patient trust and reflects positively on your practice's professionalism and attention to detail.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-procedures"></i>
+                    <h3>Specialized Expertise</h3>
+                    <p>Our team understands the unique cleaning needs of different medical specialties, from dental offices to pediatric clinics to rehabilitation centers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Areas Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h3>Clinical Areas Sanitation</h3>
+                    <p>Exam and procedure rooms require the highest level of sanitation. These critical areas demand meticulous attention to detail to prevent cross-contamination and ensure patient safety.</p>
+                    <p>Our team uses a systematic approach to clinical area cleaning, addressing high-touch surfaces, medical equipment exteriors, and floor surfaces with dedicated tools and hospital-grade disinfectants.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Terminal cleaning between each patient encounter</li>
+                        <li><i class="fas fa-check"></i>Detailed disinfection of exam tables, countertops, and medical equipment surfaces</li>
+                        <li><i class="fas fa-check"></i>Special attention to sinks, faucets, and handwashing stations</li>
+                        <li><i class="fas fa-check"></i>Proper handling of medical waste and sharps containers</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="siteImages/Clinical_Areas.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0066a1/ffffff?text=Clinical+Areas';" alt="Clinical Areas Cleaning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reception Areas Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-image">
+                    <img src="siteImages/Reception_Areas.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/673ab7/ffffff?text=Reception+Areas';" alt="Reception Areas">
+                </div>
+                <div class="info-content">
+                    <h3>Reception and Waiting Areas</h3>
+                    <p>Waiting areas create crucial first impressions while simultaneously posing infection control challenges. These high-traffic spaces require frequent attention throughout the day to maintain cleanliness and a welcoming atmosphere.</p>
+                    <p>Our services include regular disinfection of seating, tables, and other shared surfaces, with special attention to high-touch areas such as door handles, reception counters, and kiosks.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Frequent sanitizing of seating, tables, and shared surfaces</li>
+                        <li><i class="fas fa-check"></i>Meticulous cleaning of children's play areas and toys</li>
+                        <li><i class="fas fa-check"></i>Regular disinfection of door handles, light switches, and other high-touch points</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h3>Specialty Medical Environments</h3>
+                    <p>Different medical specialties have unique cleaning requirements. We tailor our approach based on your specific practice, whether you're a dental office, dermatology clinic, physical therapy center, or other specialty.</p>
+                    <p>Our cleaning team received specialized training for different healthcare environments, ensuring we understand the particular requirements and sensitivities of your practice.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Dental office-specific protocols including dental chair sanitization</li>
+                        <li><i class="fas fa-check"></i>Physical therapy equipment and treatment table disinfection</li>
+                        <li><i class="fas fa-check"></i>Dermatology and aesthetics clinic specialized cleaning</li>
+                        <li><i class="fas fa-check"></i>Laboratory and diagnostic area sanitization</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="siteImages/Specialized_Services.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0066a1/ffffff?text=Specialized+Services';" alt="Specialized Services">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Partner with Rae'dient for Your Healthcare Cleaning Needs</h2>
+            <p>Ensure your medical facility maintains the highest standards of cleanliness and infection control.</p>
+            <a href="index.html#contact" class="btn-primary">Request a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Rae'dient</h3>
+                    <p>Professional commercial cleaning services tailored to your business needs. Licensed, insured, and committed to excellence.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="private-practices.html">Private Practices</a></li>
+                        <li><a href="childcare.html">Childcare</a></li>
+                        <li><a href="retail.html">Retail</a></li>
+                        <li><a href="offices.html">Offices</a></li>
+                        <li><a href="special-events.html">Special Event Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61572564706089"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Rae'dient. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
