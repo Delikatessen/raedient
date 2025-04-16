@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Cleaning Services - Rae'dient</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to offices page */
+        .header-logo {
+            max-height: 80px;
+            width: auto;
+            border: none;
+            outline: none;
+        }
+        
+        /* Contact info stacked vertically */
+        .contact-info-top {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        .contact-item-top {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            justify-content: flex-start;
+        }
+        
+        .service-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('siteImages/Office_Cleaning.png'), url('https://placehold.co/1600x900/0099cc/ffffff?text=Office+Cleaning');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .service-hero .hero-content {
+            width: 100%;
+        }
+        
+        .service-hero h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-hero p {
+            color: var(--white);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: var(--white);
+            border: var(--border);
+            padding: 1.5rem;
+        }
+        
+        .benefit-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .info-block {
+            padding: 2rem 0;
+        }
+        
+        .info-block:nth-child(even) {
+            background-color: var(--gray-color);
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .info-grid:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .info-image img {
+            border: var(--border);
+            width: 100%;
+        }
+        
+        .info-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .info-list {
+            margin-top: 1rem;
+        }
+        
+        .info-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-list i {
+            color: var(--accent-color);
+            margin-right: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        
+        .cta-section {
+            background-color: var(--light-color);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        @media (max-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .info-image {
+                order: 1;
+            }
+            
+            .info-content {
+                order: 2;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="siteImages/logo_transparent2.png" alt="Rae'dient Pro Clean" class="header-logo">
+            </div>
+            <div class="contact-info-top">
+                <div class="contact-item-top">
+                    <i class="fas fa-phone"></i>
+                    <span>(469) 353-9409</span>
+                </div>
+                <div class="contact-item-top">
+                    <i class="fas fa-envelope"></i>
+                    <span>raediantclean@gmail.com</span>
+                </div>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#services">Services</a>
+                        <div class="dropdown-content">
+                            <a href="private-practices.html">Private Practices</a>
+                            <a href="childcare.html">Childcare</a>
+                            <a href="retail.html">Retail</a>
+                            <a href="offices.html">Offices</a>
+                            <a href="special-events.html">Special Events</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Office Cleaning Services</h1>
+                <p>Creating productive, healthy workplaces for businesses of all sizes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Importance of a Clean Workplace</h2>
+                <p>More than appearances—a clean office impacts productivity, health, and company image</p>
+            </div>
+            <div class="intro-text">
+                <p>At Rae'dient, we understand that your office is the heart of your business operations. A clean, well-maintained workspace isn't just about appearances—it directly impacts employee productivity, health, visitor impressions, and overall company culture.</p>
+                <p>Our comprehensive office cleaning services are designed to keep your workspace immaculate while minimizing disruption to your business activities. With customizable cleaning schedules that work around your business hours and flexible service packages tailored to your specific needs, we ensure your office remains a place where people can do their best work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="section-header">
+                <h2>Benefits of Professional Office Cleaning</h2>
+                <p>Why specialized cleaning matters for business environments</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-business-time"></i>
+                    <h3>Increased Productivity</h3>
+                    <p>Studies show that clean, organized work environments lead to higher employee productivity, fewer distractions, and improved focus on core business tasks.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthier Workplace</h3>
+                    <p>Regular professional cleaning reduces absenteeism by minimizing the spread of germs and allergens that cause illness, particularly in shared spaces.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Professional Image</h3>
+                    <p>A spotless office creates positive first impressions for clients, partners, and potential employees, reflecting your company's attention to detail and professionalism.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chair"></i>
+                    <h3>Asset Protection</h3>
+                    <p>Proper cleaning and maintenance extend the life of your office furniture, equipment, flooring, and other investments, reducing replacement costs over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workstations Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h3>Workstation and Desk Areas</h3>
+                    <p>Employee workspaces accumulate significant dirt, dust, and germs throughout the workday. These personal spaces require regular, detailed cleaning to maintain a healthy, productive environment.</p>
+                    <p>Our approach to workstation cleaning respects personal items and workspace organization while ensuring all surfaces are properly sanitized and maintained.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Thorough dusting of all surfaces, including hard-to-reach areas</li>
+                        <li><i class="fas fa-check"></i>Sanitization of high-touch items such as phones, keyboards, and desk surfaces</li>
+                        <li><i class="fas fa-check"></i>Proper cleaning of chair upholstery and bases</li>
+                        <li><i class="fas fa-check"></i>Organized removal of trash and recyclables</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="siteImages/Office_Workstations.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0066a1/ffffff?text=Office+Workstations';" alt="Office Workstation Cleaning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Areas Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-image">
+                    <img src="siteImages/Common_Areas.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/673ab7/ffffff?text=Common+Areas';" alt="Office Common Areas Cleaning">
+                </div>
+                <div class="info-content">
+                    <h3>Meeting Rooms and Common Areas</h3>
+                    <p>Conference rooms, lobbies, and shared spaces make crucial impressions on both employees and visitors. These high-traffic areas require special attention to maintain their appearance and functionality.</p>
+                    <p>We implement specialized cleaning protocols for these vital spaces, ensuring they remain ready for use at all times while addressing the unique challenges they present.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Comprehensive cleaning of conference tables, chairs, and presentation equipment</li>
+                        <li><i class="fas fa-check"></i>Floor care tailored to your specific flooring type, from carpets to hardwood</li>
+                        <li><i class="fas fa-check"></i>Window, glass, and partition cleaning for streak-free clarity</li>
+                        <li><i class="fas fa-check"></i>Attention to lounge furniture, reception areas, and waiting spaces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Break Rooms Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h3>Break Rooms and Kitchen Areas</h3>
+                    <p>Office kitchens and break areas present unique cleaning challenges, combining food preparation surfaces with high-traffic social spaces. These areas require rigorous sanitation to prevent odors and maintain employee health.</p>
+                    <p>Our specialized approach to these spaces goes beyond surface cleaning to ensure genuinely hygienic environments where employees can comfortably take breaks and prepare meals.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Thorough cleaning and sanitization of countertops, sinks, and food preparation areas</li>
+                        <li><i class="fas fa-check"></i>Exterior cleaning of appliances including microwaves, refrigerators, and coffee machines</li>
+                        <li><i class="fas fa-check"></i>Proper sanitization of tables, chairs, and shared dining spaces</li>
+                        <li><i class="fas fa-check"></i>Regular removal of food waste and comprehensive trash management</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="siteImages/Break_Rooms.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0066a1/ffffff?text=Break+Rooms';" alt="Office Break Room Cleaning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Partner with Rae'dient for Your Office Cleaning Needs</h2>
+            <p>Create a workspace that enhances productivity, impresses clients, and supports employee well-being.</p>
+            <a href="index.html#contact" class="btn-primary">Request a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Rae'dient</h3>
+                    <p>Professional commercial cleaning services tailored to your business needs. Licensed, insured, and committed to excellence.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="private-practices.html">Private Practices</a></li>
+                        <li><a href="childcare.html">Childcare</a></li>
+                        <li><a href="retail.html">Retail</a></li>
+                        <li><a href="offices.html">Offices</a></li>
+                        <li><a href="special-events.html">Special Event Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61572564706089"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Rae'dient. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

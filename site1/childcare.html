@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Childcare Cleaning Services - Rae'dient</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to childcare page */
+        .header-logo {
+            max-height: 80px;
+            width: auto;
+            border: none;
+            outline: none;
+        }
+        
+        /* Contact info stacked vertically */
+        .contact-info-top {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        .contact-item-top {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            justify-content: flex-start;
+        }
+        
+        .service-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('siteImages/Childcare_Cleaning.png'), url('https://placehold.co/1600x900/0099cc/ffffff?text=Childcare+Cleaning');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .service-hero .hero-content {
+            width: 100%;
+        }
+        
+        .service-hero h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-hero p {
+            color: var(--white);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: var(--white);
+            border: var(--border);
+            padding: 1.5rem;
+        }
+        
+        .benefit-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .info-block {
+            padding: 2rem 0;
+        }
+        
+        .info-block:nth-child(even) {
+            background-color: var(--gray-color);
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .info-grid:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .info-image img {
+            border: var(--border);
+            width: 100%;
+        }
+        
+        .info-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .info-list {
+            margin-top: 1rem;
+        }
+        
+        .info-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-list i {
+            color: var(--accent-color);
+            margin-right: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        
+        .cta-section {
+            background-color: var(--light-color);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        @media (max-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .info-image {
+                order: 1;
+            }
+            
+            .info-content {
+                order: 2;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="siteImages/logo_transparent2.png" alt="Rae'dient Pro Clean" class="header-logo">
+            </div>
+            <div class="contact-info-top">
+                <div class="contact-item-top">
+                    <i class="fas fa-phone"></i>
+                    <span>(469) 353-9409</span>
+                </div>
+                <div class="contact-item-top">
+                    <i class="fas fa-envelope"></i>
+                    <span>raediantclean@gmail.com</span>
+                </div>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#services">Services</a>
+                        <div class="dropdown-content">
+                            <a href="private-practices.html">Private Practices</a>
+                            <a href="childcare.html">Childcare</a>
+                            <a href="retail.html">Retail</a>
+                            <a href="offices.html">Offices</a>
+                            <a href="special-events.html">Special Events</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Childcare Cleaning Services</h1>
+                <p>Creating safe, healthy environments where children can thrive</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Importance of Clean Childcare Spaces</h2>
+                <p>More than just tidiness—it's about health, safety, and development</p>
+            </div>
+            <div class="intro-text">
+                <p>At Rae'dient, we know that cleaning a childcare space isn't like cleaning any other building. Kids are still building up their immune systems, and they tend to touch everything—so keeping things truly clean and safe is extra important.</p>
+                <p>That's why we use non-toxic, child-safe products that get the job done without leaving behind any harsh chemicals. Our team understands the unique needs of childcare settings and follows careful, consistent cleaning routines to make sure every space is safe, healthy, and ready for kids to play, learn, and grow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="section-header">
+                <h2>Benefits of Professional Childcare Cleaning</h2>
+                <p>Why specialized cleaning matters for childcare facilities</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3>Reduced Illness Spread</h3>
+                    <p>Professional sanitization significantly reduces the spread of common childhood illnesses like colds, flu, and stomach bugs, leading to fewer sick days for both children and staff.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Safer Environment</h3>
+                    <p>Our non-toxic, eco-friendly cleaning solutions eliminate harmful pathogens without introducing dangerous chemicals, creating a safer overall environment.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Enhanced Learning</h3>
+                    <p>Clean, organized spaces help children focus better and engage more deeply with learning activities, supporting cognitive development and educational outcomes.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Allergy Management</h3>
+                    <p>Regular deep cleaning reduces allergens like dust, pet dander, and pollen that can trigger asthma and allergic reactions in sensitive children.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Safety Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h3>Creating a Health-Safe Environment</h3>
+                    <p>Children's immune systems are still developing, making them more susceptible to illnesses that spread in group settings. Our cleaning protocols specifically target high-touch surfaces and common areas where germs congregate.</p>
+                    <p>We pay special attention to toys, play equipment, naptime areas, changing stations, and eating spaces—all places where pathogens can quickly spread between children.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Systematic disinfection of high-touch surfaces and shared items</li>
+                        <li><i class="fas fa-check"></i>EPA-approved, child-safe disinfectants that eliminate 99.9% of germs</li>
+                        <li><i class="fas fa-check"></i>Special attention to restrooms, changing areas, and food preparation surfaces</li>
+                        <li><i class="fas fa-check"></i>Regular deep cleaning of floor surfaces where children play</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="siteImages/Health_Safety.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0066a1/ffffff?text=Health+Safety';" alt="Health Safety Cleaning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Environment Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-image">
+                    <img src="siteImages/Learning_Environment.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/673ab7/ffffff?text=Learning+Environment';" alt="Learning Environment">
+                </div>
+                <div class="info-content">
+                    <h3>Supporting an Optimal Learning Environment</h3>
+                    <p>Research consistently shows that the physical environment significantly impacts children's learning and development. A clean, well-organized space helps children feel secure and allows them to focus on exploration and learning.</p>
+                    <p>Our cleaning team understands the importance of maintaining orderly spaces without disrupting the carefully planned learning environments that childcare professionals create.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Careful cleaning that preserves classroom organization and setup</li>
+                        <li><i class="fas fa-check"></i>Dust and allergen reduction to improve air quality and concentration</li>
+                        <li><i class="fas fa-check"></i>Odor elimination for a fresh, pleasant atmosphere</li>
+                        <li><i class="fas fa-check"></i>After-hours scheduling options to avoid disrupting daily activities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulatory Compliance Section -->
+    <section class="info-block">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h3>Meeting Regulatory Requirements</h3>
+                    <p>Childcare facilities must adhere to strict health and safety regulations. Our cleaning protocols are designed with these requirements in mind, helping your facility maintain compliance with local, state, and federal standards.</p>
+                    <p>We stay current with changing regulations and best practices in early childhood health and safety, ensuring our services always meet or exceed required standards.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-check"></i>Documentation of cleaning procedures for licensing inspections</li>
+                        <li><i class="fas fa-check"></i>Compliance with childcare-specific sanitation requirements</li>
+                        <li><i class="fas fa-check"></i>Regular updates to protocols based on evolving health guidelines</li>
+                        <li><i class="fas fa-check"></i>Staff trained in childcare-specific cleaning requirements</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="siteImages/Regulatory_Compliance.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0066a1/ffffff?text=Regulatory+Compliance';" alt="Regulatory Compliance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Partner with Rae'dient for Your Childcare Cleaning Needs</h2>
+            <p>Give children in your care the safest, healthiest environment possible with our specialized childcare cleaning services.</p>
+            <a href="index.html#contact" class="btn-primary">Request a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Rae'dient</h3>
+                    <p>Professional commercial cleaning services tailored to your business needs. Licensed, insured, and committed to excellence.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="private-practices.html">Private Practices</a></li>
+                        <li><a href="childcare.html">Childcare</a></li>
+                        <li><a href="retail.html">Retail</a></li>
+                        <li><a href="offices.html">Offices</a></li>
+                        <li><a href="special-events.html">Special Event Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61572564706089"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Rae'dient. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
